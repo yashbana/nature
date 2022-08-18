@@ -1,0 +1,38 @@
+@mixin Respondbody1 {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+/*
+phone=600px
+tab-port=900px
+tab-land=1200px
+user use this width
+big-destop=1800px 
+
+1em=16px
+1rem=16px
+*/
+
+@mixin Respond($breakpoint) {
+  @if ($breakpoint==phone) {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-port) {
+    @media (max-width: 56.25em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==tab-land) {
+    @media (max-width: 75em) {
+      @content;
+    }
+  }
+  @if ($breakpoint==big-destop) {
+    @media (min-width: 112em) {
+      @content;
+    }
+  }
+}

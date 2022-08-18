@@ -1,0 +1,70 @@
+@mixin btnlink {
+  .btnlink:link,
+  .btnlink:visited {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-block;
+
+    &:hover {
+      color: green;
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+      transform: skewy(4deg);
+    }
+  }
+}
+
+.footer {
+  background-color: #000000c7;
+  padding: 10rem 0rem;
+  font-size: 1.6rem;
+  color: #eee;
+
+  &_logo-box {
+    text-align: center;
+    margin-bottom: 8rem;
+
+    img {
+      width: 15rem;
+      height: auto;
+    }
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    .col-1 {
+      width: 50%;
+      padding: 0rem 11rem;
+      .footer_nevigation {
+        border-top: 1px solid #777;
+        display: inline-block;
+        padding-top: 2rem;
+        float: right;
+
+        ul {
+          list-style: none;
+          text-decoration: none;
+
+          li {
+            text-decoration: none;
+            display: inline-block;
+            &:not(:last-child) {
+              margin-right: 1.5rem;
+            }
+
+            @include btnlink;
+          }
+        }
+      }
+      p {
+        border-top: 1px solid #777;
+        display: inline-block;
+        padding-top: 2rem;
+        color: #eee;
+
+        width: 75%;
+        @include btnlink;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "natureproject",
+  "version": "1.0.0",
+  "description": "Landing page for nature",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/index.scss css/style.css -w"
+  },
+  "author": "yashwant",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}

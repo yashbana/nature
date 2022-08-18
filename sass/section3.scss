@@ -1,0 +1,303 @@
+@mixin btn {
+  .btn:link,
+  .btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 20px 27px;
+    font-size: 1.3rem;
+    display: inline-block;
+    border-radius: 100px;
+    transition: all 0.2s;
+    position: relative;
+    animation-name: inMoveBottom;
+    animation-duration: 2s;
+    animation-fill-mode: backwards;
+
+    &:hover {
+      transform: translateY(-0.3rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+      transform: translateY(-0.1rem);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+    }
+  }
+  .btn-white {
+    background-color: #fff;
+    color: #777;
+  }
+  .btn-green {
+    background-color: green;
+    color: #f7f7ff;
+  }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: all 0.4s;
+  }
+  .btn-white::after {
+    background-color: #fff;
+  }
+  .btn-green::after {
+    background-color: green;
+  }
+
+  .btn:hover::after {
+    transform: scaleX(1.3) scaleY(1.6);
+    opacity: 0;
+  }
+}
+
+.section31 {
+  background-color: #eee;
+  text-align: center;
+  flex-direction: column;
+  .row {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+    column-gap: 20rem;
+    @include Respond(phone) {
+      grid-gap: 7rem !important;
+    }
+    @include Respond(tab-port) {
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .card {
+      position: relative;
+      perspective: 150rem;
+      -moz-perspective: 150rem;
+
+      .card__side {
+        height: 42rem;
+        width: 28rem;
+        transition: all 0.8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        backface-visibility: hidden;
+        overflow: hidden;
+        border-radius: 3px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 15);
+
+        @include Respond(phone) {
+          position: relative;
+        }
+
+        &--front {
+          background-color: white;
+        }
+
+        &--back {
+          transform: rotateY(180deg);
+          &-1 {
+            background-image: linear-gradient(
+              to right bottom,
+              #dca21a,
+              #eb6a25
+            );
+          }
+
+          &-2 {
+            background-image: linear-gradient(
+              to right,
+              rgba(21, 247, 100, 0.867),
+              rgba(10, 180, 133, 0.8)
+            );
+          }
+
+          &-3 {
+            background-image: linear-gradient(
+              to right bottom,
+              #29c2ff,
+              #5643fa
+            );
+          }
+        }
+
+        &:hover .card__side--front {
+          transform: rotateY(-180deg);
+        }
+        &:hover .card__side--back {
+          transform: rotateY(0deg);
+        }
+      }
+      .card__pictur {
+        clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+        background-blend-mode: screen;
+        background-size: cover;
+
+        height: 19rem;
+
+        &--1 {
+          background-image: linear-gradient(
+            to right bottom,
+            rgba(219, 161, 26, 0.8),
+            rgba(235, 105, 36, 0.8)
+          );
+          .img {
+            width: 28rem;
+            height: 21rem;
+            opacity: 0.5;
+          }
+        }
+        &--2 {
+          color: #15f764dd;
+          background-image: linear-gradient(to right, #15f764dd, #0ab485cc);
+          .img {
+            width: 28rem;
+            height: 21rem;
+            opacity: 0.5;
+          }
+        }
+
+        &--3 {
+          background-image: linear-gradient(to right bottom, #29c2ff, #5643fa);
+          .img {
+            width: 28rem;
+            height: 21rem;
+            opacity: 0.5;
+          }
+        }
+      }
+      .card__heading {
+        font-size: 2.8rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: white;
+        position: absolute;
+        top: 12rem;
+        right: -1rem;
+        width: 75%;
+
+        .card__heading--span1 {
+          padding: 0.3rem 1.5rem;
+          background-image: linear-gradient(
+            to right bottom,
+            hsla(42, 79%, 48%, 0.88),
+            hsla(21, 83%, 53%, 0.88)
+          );
+        }
+      }
+      .card__heading--span2 {
+        padding: 0.3rem 1.5rem;
+        background-image: linear-gradient(to right, #15f764dd, #0ab485cc);
+      }
+      .card__heading--span3 {
+        padding: 0.3rem 1.5rem;
+        background-image: linear-gradient(to right bottom, #29c2ff, #5643fa);
+      }
+
+      .card__details {
+        padding: 3rem;
+        ul {
+          list-style: none;
+          width: 80%;
+          margin: 0 auto;
+          li {
+            text-align: center;
+            font-size: 1.5rem;
+            padding: 1rem;
+
+            &:not(:last-child) {
+              border-bottom: 1px solid #e4dfdfe4;
+            }
+          }
+        }
+      }
+      .card__side {
+        .card__cta {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          .crad__price--box {
+            color: #f7f7f794;
+            grid-gap: 3rem;
+            h6 {
+              font-size: 1.6rem;
+              font-weight: lighter;
+              padding-bottom: 5rem;
+            }
+
+            h1 {
+              padding-bottom: 5rem;
+              font-size: 6rem;
+              font-weight: 300;
+            }
+          }
+
+          @include btn;
+        }
+      }
+
+      &:hover .card__side--front {
+        transform: rotateY(-180deg);
+      }
+      &:hover .card__side--back {
+        transform: rotateY(0deg);
+      }
+    }
+  }
+
+  .headings {
+    h2 {
+      margin-bottom: 10rem;
+      font-size: 4rem;
+      text-transform: uppercase;
+
+      letter-spacing: 0.2rem;
+      font-weight: 700;
+      background-image: linear-gradient(
+        to right,
+        rgba(21, 247, 100, 0.867),
+        rgba(10, 180, 133, 0.8)
+      );
+
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
+
+      &:hover {
+        transform: skewY(2deg) skewX(15deg) scale(1.1);
+        text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+  .btn {
+    @include btn;
+  }
+}
+.btn2 {
+  padding: 3rem 0rem 8rem;
+  margin-top: 50rem;
+
+  @include btn;
+}
+
+@keyframes inMoveBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}

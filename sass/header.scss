@@ -1,0 +1,95 @@
+.headercopy {
+  background-color: #eee;
+
+  .header {
+    height: 95vh;
+    background-image: linear-gradient(
+        to right bottom,
+
+        rgba(21, 247, 100, 0.865),
+        rgba(10, 180, 133, 0.8)
+      ),
+      url(" https://cdn-prod.medicalnewstoday.com/content/images/articles/325/325466/man-walking-dog.jpg");
+    background-size: cover;
+
+    background-position: top;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 00% 100%);
+
+    .Logo {
+      position: absolute;
+      margin-top: 5.5rem;
+      left: 4vw;
+      img {
+        width: 6.5rem;
+        height: 4rem;
+      }
+    }
+
+    .text_box {
+      position: absolute;
+      top: 19%;
+      left: 50%;
+      transform: translate(-50%, 50%);
+      text-align: center;
+      @import "./btn.scss";
+      backface-visibility: hidden;
+
+      .primarry {
+        color: #ffffff;
+        text-transform: uppercase;
+        backface-visibility: hidden;
+        margin-bottom: 5rem;
+
+        .primarry-first {
+          display: block;
+          font-size: 5.1rem;
+          font-weight: bold;
+          letter-spacing: 3.5rem;
+          animation: inMoveRight 1s ease-out;
+          @include Respond(tab-port) {
+            font-size: 3.7rem;
+            letter-spacing: 2.5rem;
+          }
+        }
+
+        .primarry-second {
+          display: block;
+          font-size: 1.5rem;
+          letter-spacing: 1.7rem;
+          animation: inMoveLeft 1s ease-out;
+          @include Respond(tab-port) {
+            font-size: 1.5rem;
+            letter-spacing: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes inMoveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(2rem);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes inMoveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
