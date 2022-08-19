@@ -67,14 +67,14 @@
     align-items: center;
     width: 80%;
     column-gap: 20rem;
-    @include Respond(phone) {
-      grid-gap: 7rem !important;
-    }
+
     @include Respond(tab-port) {
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
       align-items: center;
+      grid-gap: 45rem;
+      padding-right: 28rem;
     }
 
     .card {
@@ -94,8 +94,8 @@
         border-radius: 3px;
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 15);
 
-        @include Respond(phone) {
-          position: relative;
+        @include Respond(tab-port) {
+          width: 50rem;
         }
 
         &--front {

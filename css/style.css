@@ -401,15 +401,14 @@ big-destop=1800px
     align-items: center;
     width: 80%;
     column-gap: 20rem; }
-    @media (max-width: 37.5em) {
-      .section31 .row {
-        grid-gap: 7rem !important; } }
     @media (max-width: 56.25em) {
       .section31 .row {
         display: flex;
         justify-content: space-evenly;
         flex-direction: column;
-        align-items: center; } }
+        align-items: center;
+        grid-gap: 45rem;
+        padding-right: 28rem; } }
     .section31 .row .card {
       position: relative;
       perspective: 150rem;
@@ -425,9 +424,9 @@ big-destop=1800px
         overflow: hidden;
         border-radius: 3px;
         box-shadow: 0 0.5rem 1rem black; }
-        @media (max-width: 37.5em) {
+        @media (max-width: 56.25em) {
           .section31 .row .card .card__side {
-            position: relative; } }
+            width: 50rem; } }
         .section31 .row .card .card__side--front {
           background-color: white; }
         .section31 .row .card .card__side--back {
