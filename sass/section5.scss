@@ -1,6 +1,9 @@
 .section5copy {
   background-color: #eee;
   padding-top: 5rem;
+  @include Respond(tab-port) {
+    padding-top: 0rem;
+  }
 
   .section5 {
     text-align: center;
@@ -10,6 +13,11 @@
 
     background-image: linear-gradient(to right bottom, #15f764dd, #0ab485cc);
     padding: 25rem;
+
+    @include Respond(tab-port) {
+      padding: 0rem 0rem;
+      margin: 1rem 0rem;
+    }
 
     .book {
       background-image: linear-gradient(
@@ -30,8 +38,16 @@
           float: left;
           padding-left: 3rem;
 
+          @include Respond(tab-port) {
+            padding-left: 1rem;
+          }
+
           .form__group {
             padding-bottom: 3rem;
+
+            @include Respond(tab-port) {
+              margin-right: -5rem;
+            }
             .form__input {
               font-size: 1.5rem;
               font-weight: inherit;
@@ -72,6 +88,9 @@
             .form__radio--group {
               display: inline-block;
               width: 49%;
+              @include Respond(tab-port) {
+                width: 42%;
+              }
 
               .form__radio--input {
                 display: none;
@@ -106,12 +125,16 @@
                     transition: all 0.2s;
                   }
                 }
+                .p {
+                  margin: -1rem;
+                }
               }
             }
           }
 
           .heading {
             margin: 6rem 0rem;
+
             .heading_secondary {
               display: inline-block;
               background-image: linear-gradient(to right, #15f764dd, #0ab485cc);
@@ -122,10 +145,17 @@
               -webkit-background-clip: text;
               color: transparent;
               transition: all 0.2s;
+              @include Respond(tab-port) {
+                letter-spacing: 0rem;
+                font-size: 2.5rem;
+              }
 
               &:hover {
                 transform: skewY(2deg) skewX(15deg) scale(1.1);
                 text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+                @include Respond(tab-port) {
+                  transform: skewY(2deg) skewX(15deg) scale(1.05);
+                }
               }
             }
           }

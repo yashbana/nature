@@ -15,6 +15,12 @@ big-destop=1800px
 */
 
 @mixin Respond($breakpoint) {
+  @if ($breakpoint==Mini-phone) {
+    @media (max-width: 25em) {
+      @content;
+    }
+  }
+
   @if ($breakpoint==phone) {
     @media (max-width: 37.5em) {
       @content;

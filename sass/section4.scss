@@ -3,6 +3,7 @@
 
   .section4 {
     text-align: center;
+    position: relative;
 
     .section31__headings {
       opacity: 0.8;
@@ -20,9 +21,18 @@
       color: transparent;
       transition: all 0.2s;
       padding: 12rem 0rem;
+
+      @include Respond(tab-port) {
+        letter-spacing: 0rem;
+        font-size: 2.5rem;
+      }
       &:hover {
         transform: skewY(2deg) skewX(15deg) scale(1.1);
         text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2);
+
+        @include Respond(tab-port) {
+          transform: skewY(2deg) skewX(15deg) scale(1.05);
+        }
       }
     }
 
@@ -43,6 +53,11 @@
         transform: skewX(-12deg);
         background-color: #fff;
         position: relative;
+        @include Respond(tab-port) {
+          width: 90%;
+          padding: 3rem;
+        }
+
         &__shape {
           width: 15rem;
           height: 15rem;
@@ -126,13 +141,11 @@
     }
 
     .bg--video {
-      position: relative;
-
       &__content {
         position: absolute;
         left: 0;
-        right: 0;
-        height: 112rem;
+        top: 0;
+        height: 100%;
         width: 100%;
         object-fit: cover;
         opacity: 0.15;
