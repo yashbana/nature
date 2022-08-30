@@ -15,6 +15,8 @@
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 15);
     @include Respond(tab-port) {
       margin: 0rem;
+      padding: 0.5rem;
+      font-size: 2.5rem;
     }
 
     &__icon {
@@ -65,6 +67,9 @@
     text-align: center;
 
     clip-path: polygon(0% 20%, 100% 0%, 100% 80%, 0 100%);
+    @include Respond(tab-port) {
+      clip-path: polygon(0% 20%, 285% 0%, 100% 80%, 0 85%);
+    }
 
     .Row {
       text-align: center;
@@ -80,7 +85,7 @@
         flex-direction: column;
         align-items: center;
 
-        padding: 37rem 2rem;
+        padding: 52rem 2rem;
       }
     }
   }

@@ -67,14 +67,22 @@
     align-items: center;
     width: 80%;
     column-gap: 20rem;
-    @include Respond(phone) {
-      grid-gap: 7rem !important;
-    }
+
     @include Respond(tab-port) {
       display: flex;
       justify-content: space-evenly;
       flex-direction: column;
       align-items: center;
+      grid-gap: 45rem;
+      position: relative;
+      top: 0;
+      left: -3rem;
+    }
+    @include Respond(phone) {
+      grid-gap: 45rem;
+      position: relative;
+      top: 0;
+      left: -6rem;
     }
 
     .card {
@@ -96,6 +104,15 @@
 
         @include Respond(phone) {
           position: relative;
+        }
+        @include Respond(tab-port) {
+          width: 45rem;
+          position: absolute;
+          top: 0;
+          left: -7.5rem;
+        }
+        @include Respond(Mini-phone) {
+          width: 35rem;
         }
 
         &--front {
@@ -153,6 +170,10 @@
             width: 28rem;
             height: 21rem;
             opacity: 0.5;
+
+            @include Respond(tab-port) {
+              width: 45rem;
+            }
           }
         }
         &--2 {
@@ -162,6 +183,10 @@
             width: 28rem;
             height: 21rem;
             opacity: 0.5;
+
+            @include Respond(tab-port) {
+              width: 45rem;
+            }
           }
         }
 
@@ -171,6 +196,10 @@
             width: 28rem;
             height: 21rem;
             opacity: 0.5;
+
+            @include Respond(tab-port) {
+              width: 45rem;
+            }
           }
         }
       }
