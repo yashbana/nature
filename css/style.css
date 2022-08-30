@@ -337,7 +337,7 @@ big-destop=1800px
     .section2copy {
       padding: 0; } }
   .section2copy .section2 {
-    background-image: linear-gradient(to right, rgba(21, 247, 100, 0.865), rgba(10, 180, 133, 0.8)), url("E:/Natureproject/img/nat-4.jpg");
+    background-image: linear-gradient(to right, rgba(21, 247, 100, 0.865), rgba(10, 180, 133, 0.8)), url("../img/nat-4.jpg");
     background-size: cover;
     background-position: top;
     display: flex;
