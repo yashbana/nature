@@ -467,7 +467,7 @@ big-destop=1800px
             position: relative; } }
         @media (max-width: 56.25em) {
           .section31 .row .card .card__side {
-            width: 45rem;
+            width: 38rem;
             position: absolute;
             top: 0;
             left: -7.5rem; } }
